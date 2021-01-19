@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    {% if title %}
-        <title>{{ title }}</title>
-    {% else %}
-        <title>Test blog</title>
-    {% endif %}
-</head>
-<body>
+{% extends "tutorialBlogApp/default.html" %}
+{% block content %}
     <h1 align="center">This is about page</h1>
     <br>
     <div align="center">Well, what to say here? This is a very simple app, created with django, so I can learn to use it. Made with help of tutorials from Corey Schafer (you can find them <a href="https://www.youtube.com/watch?v=UmljXZIypDc&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p">here</a>). This will be updated later, at least I hope so. Well, back to practice. Thanks for reading! </div>
-</body>
-</html>
+{% endblock content %}

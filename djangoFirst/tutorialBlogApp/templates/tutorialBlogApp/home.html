@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    {% if title %}
-        <title>{{ title }}</title>
-    {% else %}
-        <title>Test blog</title>
-    {% endif %}
-</head>
-<body>
+{% extends "tutorialBlogApp/default.html" %}
+{% block content %}
     <h1 align="center">This is a main page for a blog from tutorial.</h1>
     <br>
     <div align="center">Welcome! This is a tutorial, so don't be sad there's nothing there. I'm in progress.</div>
@@ -21,5 +12,4 @@
             <p align="center"><img src="{{ post.image }}"></p>
         {% endif %}
     {% endfor %}
-</body>
-</html>
+{% endblock content %}
