@@ -1,0 +1,10 @@
+{% extends "tutorialBlogApp/default.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <h2>Logging out was a success. Plz come back</h2>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            You can log back in anytime by using <a href="{% url 'blog-login' %}">this</a>.
+        </small>
+    </div>
+{% endblock content %}
