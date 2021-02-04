@@ -1,0 +1,18 @@
+{% extends "tutorialBlogApp/default.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">
+        <form method="post">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">
+                    DO ANOTHER Blog Post
+                </legend>
+                {{ form | crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">POST ME</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

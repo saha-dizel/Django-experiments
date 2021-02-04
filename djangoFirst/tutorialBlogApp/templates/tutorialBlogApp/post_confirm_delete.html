@@ -1,0 +1,18 @@
+{% extends "tutorialBlogApp/default.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="post">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">
+                    Yo, you sure?
+                </legend>
+                <h2>This will be forever. Can't reverse it. Post is "{{ object.title }}"</h2>
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-danger" type="submit">DESTROY</button>
+                <a class="btn btn-outline-secondary" href="{% url 'blog-post' object.id %}">NO, WAIT!</a>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
