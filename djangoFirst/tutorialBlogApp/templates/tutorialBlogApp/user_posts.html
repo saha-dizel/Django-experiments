@@ -1,6 +1,6 @@
 {% extends "tutorialBlogApp/default.html" %}
 {% block content %}
-    <h1 align="center" class="container">This is a main page for a blog from tutorial.</h1>
+    <h1 align="center" class="container">This is a page, that shows posts from {{ view.kwargs.username }}. Right now they posted {{ page_obj.paginator.count }}</h1>
     <br>
     <div class="container" align="center">Welcome! This is a tutorial, so don't be sad there's nothing there. I'm in progress.</div>
     <br>

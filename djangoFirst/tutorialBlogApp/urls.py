@@ -2,7 +2,7 @@ from django.urls import path
 from django.contrib.auth import views as auth_views
 from . import views
 from userManagerApp import views as register_views
-from .views import HomeViewClass, PostViewClass, PostCreateClass, PostUpdateClass, PostDeleteClass
+from .views import HomeViewClass, PostViewClass, PostCreateClass, PostUpdateClass, PostDeleteClass, PostByAuthorViewClass
 
 urlpatterns = [
     path('', HomeViewClass.as_view(), name='blog-home'),
@@ -14,5 +14,6 @@ urlpatterns = [
     path('register/', register_views.register_view, name='blog-register'),
     path('login/', auth_views.LoginView.as_view(template_name='userManagerApp/login.html'), name='blog-login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='userManagerApp/logout.html'), name='blog-logout'),
-    path('profile/', register_views.user_profile, name='blog-profile')
+    path('profile/', register_views.user_profile, name='blog-profile'),
+    path('user/<str:username>', PostByAuthorViewClass.as_view(), name='blog-post-by-author')
 ]
